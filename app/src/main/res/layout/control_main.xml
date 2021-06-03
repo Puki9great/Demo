@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backdrop_new">
+
+    <Button
+        android:id="@+id/btn_stop"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="76dp"
+        android:background="@drawable/round_button"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="@string/stop"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.68"
+        app:layout_constraintStart_toEndOf="@+id/btn_start"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/btn_capture"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="28dp"
+        android:layout_marginBottom="76dp"
+        android:background="@drawable/round_button"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="@string/capture"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_start"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="64dp"
+        android:background="@drawable/round_button"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="START"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_capture"
+        app:layout_constraintTop_toBottomOf="@+id/list_of_messages"
+        app:layout_constraintVertical_bias="0.191" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list_of_messages"
+        android:layout_width="350dp"
+        android:layout_height="450dp"
+        android:layout_above="@+id/btn_start"
+        android:layout_marginTop="112dp"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/flashOn"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="100dp"
+        android:background="@drawable/round_button"
+        android:text="Flash On"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/list_of_messages"
+        app:layout_constraintVertical_bias="0.829" />
+
+    <Button
+        android:id="@+id/flashOff"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:background="@drawable/round_button"
+        android:text="Flash Off"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.378"
+        app:layout_constraintStart_toEndOf="@+id/flashOn"
+        app:layout_constraintTop_toBottomOf="@+id/list_of_messages"
+        app:layout_constraintVertical_bias="0.829" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
