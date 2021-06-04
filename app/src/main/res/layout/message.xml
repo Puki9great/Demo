@@ -25,6 +25,7 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
             android:textColor="@color/colorPrimaryLight"
+            android:textSize="15dp"
             android:text="Test"
             android:id="@+id/message_user"
             android:textStyle="normal|bold" />
@@ -35,6 +36,7 @@
             android:layout_alignBottom="@+id/message_user"
             android:layout_alignParentRight="true"
             android:textColor="@color/colorPrimaryLight"
+            android:textSize="10dp"
             android:text="Test"
             android:id="@+id/message_time" />
 
@@ -48,10 +50,10 @@
             android:layout_marginTop="5dp"
             android:id="@+id/message_text"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textSize="18sp" />
+            android:textSize="15dp" />
 
         <ImageView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             card_view:srcCompat="@color/cardview_dark_background"
             android:id="@+id/image"
