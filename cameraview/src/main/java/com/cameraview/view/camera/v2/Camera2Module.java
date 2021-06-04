@@ -751,6 +751,11 @@ public class Camera2Module extends ICameraModule {
         mActiveCamera = ((Bundle) state).getString(EXTRA_DEVICE_ID);
     }
 
+    @Override
+    public CameraView.Flash getFlash() {
+        return super.getFlash();
+    }
+
     /**
      * A session has multiple surfaces for the camera to draw to.
      */

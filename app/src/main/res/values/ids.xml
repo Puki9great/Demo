@@ -2,6 +2,7 @@
 <resources>
 
     <item name="btn_master" type="id" />
+
     <item name="btn_localcamera" type="id" />
     <item name="btn_master_chat" type="id" />
     <item name="btn_stop" type="id" />
@@ -9,5 +10,9 @@
     <item name="btn_capture" type="id" />
     <item name="check_toggle" type="id" />
     <item name= "list_of_messages" type="id"/>
+    <item name="fon" type="id" />
+    <item name= "foff" type="id"/>
+
+
 
 </resources>

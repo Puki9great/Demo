@@ -53,7 +53,7 @@ public class ControlActivity extends AppCompatActivity implements View.OnClickLi
     private MessageRecyclerView mControlAdapter;
     private ArrayList<MessageFormat> mControlMessages;
     private ArrayList<MessageFormat> tempList;
-
+    Button flashOff, flashOn;
 
     private LinearLayoutManager mLinearLayoutManager;
     private Bitmap mImage;
@@ -64,6 +64,8 @@ public class ControlActivity extends AppCompatActivity implements View.OnClickLi
         setContentView(R.layout.control_main);
 
         Button mStart = findViewById(R.id.btn_start);
+         flashOn = findViewById(R.id.fon);
+         flashOff = findViewById(R.id.foff);
         Button mCapture = findViewById(R.id.btn_capture);
         Button mStop = findViewById(R.id.btn_stop);
         RecyclerView mListView= findViewById(R.id.list_of_messages);
@@ -74,6 +76,7 @@ public class ControlActivity extends AppCompatActivity implements View.OnClickLi
             Toast.makeText(this, "Bluetooth is not available!", Toast.LENGTH_SHORT).show();
             finish();
         }
+
         // only way to work within android v. 6
         ActivityCompat.requestPermissions(this,
                 new String[]{Manifest.permission.ACCESS_COARSE_LOCATION},1001);
@@ -168,9 +171,11 @@ public class ControlActivity extends AppCompatActivity implements View.OnClickLi
             }
         });
 
-        mStart.setOnClickListener(this);
+        //mStart.setOnClickListener(this);
         mCapture.setOnClickListener(this);
-        mStop.setOnClickListener(this);
+        flashOn.setOnClickListener(this);
+        flashOff.setOnClickListener(this);
+        //mStop.setOnClickListener(this);
 
     }
 
@@ -227,7 +232,7 @@ public class ControlActivity extends AppCompatActivity implements View.OnClickLi
 
     private void sendMessage(String message) {
         if (bluetoothMessageController.getState() != Constants.STATE_CONNECTED) {
-            Toast.makeText(this, "Connection was lost!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Connection was lost", Toast.LENGTH_SHORT).show();
             return;
         }
         if (message.length() > 0) {
@@ -245,6 +250,18 @@ public class ControlActivity extends AppCompatActivity implements View.OnClickLi
                     break;
                 case R.id.btn_capture:
                     sendMessage(Commands.CAPTURE);
+                    break;
+                case R.id.fon:
+                    sendMessage(Commands.FLASH_ON);
+                    flashOn.setVisibility(View.GONE);
+                    flashOff.setVisibility(View.VISIBLE);
+                    break;
+
+                case R.id.foff:
+                    sendMessage(Commands.FLASH_OFF);
+                    flashOn.setVisibility(View.VISIBLE);
+                    flashOff.setVisibility(View.GONE);
+
                     break;
                 case R.id.btn_stop:
                     break;

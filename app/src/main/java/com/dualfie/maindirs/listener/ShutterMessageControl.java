@@ -107,6 +107,21 @@ public class ShutterMessageControl {
  //                               lcam.getHandler().obtainMessage().sendToTarget();
  //                               lcam.confirmPicture();
                                 break;
+                            case Commands.FLASH_ON:
+                                Log.d(TAG, "FLASH ON RECEIVED ");
+                                if (lcam.getFlash() != CameraView.Flash.ON)
+                                {
+                                    lcam.setFlash(CameraView.Flash.ON);
+                                    Log.d(TAG, "FLASH MODE **** : " +lcam.getFlash().toString());
+                                }
+                                break;
+                            case Commands.FLASH_OFF:
+                                Log.d(TAG, "FLASH OFF RECEIVED ");
+                                if (lcam.getFlash() != CameraView.Flash.OFF)
+                                {
+                                    lcam.setFlash(CameraView.Flash.OFF);
+                                }
+                                break;
                             default:
                                 throw new IllegalStateException("Unexpected value: " + msg.arg1);
                         }
